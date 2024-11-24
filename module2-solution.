@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 2 Solution</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Responsive Design Assignment</h1>
+  </header>
+  <main>
+    <section class="section chicken">
+      <div class="section-title">Chicken</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+    <section class="section beef">
+      <div class="section-title">Beef</div>
+      <p>Suspendisse potenti. Cras in ligula a felis laoreet fringilla.</p>
+    </section>
+    <section class="section sushi">
+      <div class="section-title">Sushi</div>
+      <p>Donec vehicula tortor sit amet metus tempus, sed placerat sapien gravida.</p>
+    </section>
+  </main>
+</body>
+</html>
