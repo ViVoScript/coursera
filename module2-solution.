@@ -26,3 +26,73 @@
   </main>
 </body>
 </html>
+/* General styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+main {
+  padding: 10px;
+}
+
+/* Section styles */
+.section {
+  border: 1px solid black;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: #eaeaea;
+  position: relative;
+}
+
+.section-title {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+/* Responsive Layouts */
+@media (min-width: 992px) {
+  main {
+    display: flex;
+  }
+
+  .section {
+    flex: 1;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .section {
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+
+  .section:nth-child(3) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    width: 100%;
+  }
+}
+
