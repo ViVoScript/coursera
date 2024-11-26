@@ -1,3 +1,31 @@
 module3-solution/
 └── css/
     └── styles.css
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Mobile Menu Dropdown Styling */
+.navbar-nav {
+  background-color: #f8f9fa; /* Light gray for dropdown */
+  width: 100%;
+}
+
+/* Tall Section */
+.section {
+  height: 1000px;
+  background-color: #f0f0f0; /* Light gray */
+  padding: 20px;
+}
+
+/* Heading Styling */
+h1 {
+  margin: 20px 0;
+  font-size: 2.5em;
+}
