@@ -1,0 +1,12 @@
+(function (window) {
+  // Step 1: Create an IIFE
+  var goodbyeSpeaker = {};
+
+  // Step 2: Add the speak function
+  goodbyeSpeaker.speak = function (name) {
+    console.log("Goodbye " + name);
+  };
+
+  // Step 3: Expose goodbyeSpeaker to the global object
+  window.goodbyeSpeaker = goodbyeSpeaker;
+})(window);
