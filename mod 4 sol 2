@@ -1,0 +1,16 @@
+(function () {
+  // Step 1: Define the names array
+  var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+
+  // Step 2: Loop through each name in the array
+  for (var i = 0; i < names.length; i++) {
+    var firstLetter = names[i].charAt(0).toLowerCase();
+
+    // Step 3: Use helloSpeaker or goodbyeSpeaker based on the first letter
+    if (firstLetter === 'j') {
+      goodbyeSpeaker.speak(names[i]);
+    } else {
+      helloSpeaker.speak(names[i]);
+    }
+  }
+})();
