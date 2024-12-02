@@ -1,0 +1,53 @@
+(function (global) {
+  var dc = {};
+
+  var homeHtml = "snippets/home-snippet.html";
+
+  // STEP 0: Create a function to fetch all categories
+  var allCategoriesUrl = "https://davids-restaurant.herokuapp.com/categories.json";
+  var randomCategoryShortName;
+
+  var insertHtml = function (selector, html) {
+    document.querySelector(selector).innerHTML = html;
+  };
+  
+  var showLoading = function (selector) {
+    var html = "<div class='text-center'><img src='images/ajax-loader.gif'></div>";
+    insertHtml(selector, html);
+  };
+
+  var $ajaxUtils = global.$ajaxUtils;
+
+  dc.loadHomePage = function () {
+    showLoading("#main-content");
+
+    // Fetch the home snippet and randomize the category
+    $ajaxUtils.sendGetRequest(allCategoriesUrl, function (categories) {
+      randomCategoryShortName = chooseRandomCategory(categories);
+      $ajaxUtils.sendGetRequest(homeHtml, function (responseText) {
+        var updatedResponseText = insertProperty(
+          responseText,
+          "randomCategoryShortName",
+          randomCategoryShortName
+        );
+        insertHtml("#main-content", updatedResponseText);
+      }, false);
+    });
+  };
+
+  // STEP 1: Choose a random category
+  function chooseRandomCategory(categories) {
+    var randomIndex = Math.floor(Math.random() * categories.length);
+    return categories[randomIndex].short_name;
+  }
+
+  // Utility to insert properties
+  function insertProperty(string, propName, propValue) {
+    var propToReplace = "{{" + propName + "}}";
+    string = string.replace(new RegExp(propToReplace, "g"), propValue);
+    return string;
+  }
+
+  global.$dc = dc;
+})(window);
+chooseRandomCategory
